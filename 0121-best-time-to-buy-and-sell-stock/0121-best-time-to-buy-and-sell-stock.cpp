@@ -16,15 +16,11 @@ class Solution {
       int pist = 0; //profit if sold today
 
       for (int i = 0; i < prices.size(); i++) {
-        //Updating least stock till now
         if (lssf > prices[i]) {
           lssf = prices[i];
         }
-
-        //Amount of profit if sold today
+        
         pist = prices[i] - lssf;
-
-        //maximum overall profit till now
         op = max(op, pist);
       }
 
