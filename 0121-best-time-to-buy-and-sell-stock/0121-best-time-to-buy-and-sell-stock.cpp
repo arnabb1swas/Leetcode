@@ -1,5 +1,5 @@
 class Solution {
-  public: int maxProfit(vector < int > & prices) {
+  public: int maxProfit(vector<int> & prices) {
     
       // => [7,1,5,3,6,4]
       // price   lssf    pist    op
