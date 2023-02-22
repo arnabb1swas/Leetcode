@@ -1,7 +1,6 @@
 class Solution {
 public:
-    bool binarySearchIn2DArray(vector<vector<int>> matrix, int target)
-    {
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
         int n = matrix.size();
         int m = matrix[0].size();
         int start = 0, end = (n * m) - 1;
@@ -9,12 +8,14 @@ public:
         while (start <= end)
         {
             int mid = start + (end - start) / 2;
-            int val = matrix[mid / m][mid % m];
-            if (val == target)
+            int i = mid / m;
+            int j = mid % m;
+
+            if (matrix[i][j] == target)
             {
                 return true;
             }
-            else if (val < target)
+            else if (matrix[i][j] < target)
             {
                 start = mid + 1;
             }
@@ -24,9 +25,5 @@ public:
             }
         }
         return false;
-    }
-    
-    bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        return binarySearchIn2DArray(matrix, target);
     }
 };
