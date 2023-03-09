@@ -8,10 +8,11 @@ public:
         {
             int start = 0;
             int end = arr2.size()-1;
+            int mid = (start + end)/2;
             res++;
             while(start <= end)
             {
-                int mid = (start + end)/2;
+                mid = (start + end)/2;
                 if((arr2[mid] <= (d+var))  and (arr2[mid] >= (var-d)))
                 {
                     res--;
