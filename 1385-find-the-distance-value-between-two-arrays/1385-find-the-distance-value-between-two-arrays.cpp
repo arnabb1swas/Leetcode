@@ -8,18 +8,21 @@ public:
         {
             int start = 0;
             int end = arr2.size()-1;
-            int mid = (start + end)/2;
             res++;
             while(start <= end)
             {
-                mid = (start + end)/2;
+                int mid = (start + end)/2;
                 if((arr2[mid] <= (d+var))  and (arr2[mid] >= (var-d)))
                 {
                     res--;
                     break;
                 }
-                else if(arr2[mid] > (d+var))                    end = mid-1;
-                else                                          start = mid+1;
+                else if(arr2[mid] > (d+var)) {
+                    end = mid-1;
+                }
+                else{
+                    start = mid+1;
+                }
             }
         }
         return res;
