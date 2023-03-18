@@ -7,7 +7,6 @@ public:
             tmp = mid * (mid + 1) / 2;
             
             if (tmp == n) return mid;
-            
             if (tmp <= n) lo = mid + 1;
             else hi = mid - 1;
         }
