@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<pair<int, string>> nums = {
+    vector<pair<int, string>> numString = {
         {1000000000, "Billion"}, {1000000, "Million"}, {1000, "Thousand"}, {100, "Hundred"}, 
         {90, "Ninety"}, {80, "Eighty"}, {70, "Seventy"}, {60, "Sixty"}, {50, "Fifty"}, {40, "Forty"},
         {30, "Thirty"}, {20, "Twenty"}, {19, "Nineteen"}, {18, "Eighteen"}, {17, "Seventeen"},
@@ -10,23 +10,23 @@ public:
     };
 
     string numberToWords(int num) {
-        if(num==0){
-            return "Zero";
-        } 
-        for(auto it:nums){
-        if(num>=it.first){
-            string a="";
-            if(num>=100){
-                a=numberToWords(num/it.first)+" ";
-            }
-            string b=it.second;
-            string c="";
-            if(num%it.first !=0){
-                c=" "+numberToWords(num%it.first);
-            }
-            return a+b+c;
+      if (num == 0) {
+        return "Zero";
+      }
+      for (auto it: numString) {
+        if (num >= it.first) {
+          string a = "";
+          if (num >= 100) {
+            a = numberToWords(num / it.first) + " ";
+          }
+          string b = it.second;
+          string c = "";
+          if (num % it.first != 0) {
+            c = " " + numberToWords(num % it.first);
+          }
+          return a + b + c;
         }
-    }
-    return "";
+      }
+      return "";
     }
 };
