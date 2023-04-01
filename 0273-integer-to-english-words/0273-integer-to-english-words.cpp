@@ -23,7 +23,6 @@ public:
           }
             
           string b = it.second;
-            
           string c = "";
           if (num % it.first != 0) {
             c = " " + numberToWords(num % it.first);
