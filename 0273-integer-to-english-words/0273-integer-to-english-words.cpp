@@ -13,20 +13,26 @@ public:
       if (num == 0) {
         return "Zero";
       }
+        
       for (auto it: numString) {
         if (num >= it.first) {
+            
           string a = "";
           if (num >= 100) {
             a = numberToWords(num / it.first) + " ";
           }
+            
           string b = it.second;
+            
           string c = "";
           if (num % it.first != 0) {
             c = " " + numberToWords(num % it.first);
           }
+            
           return a + b + c;
         }
       }
+        
       return "";
     }
 };
