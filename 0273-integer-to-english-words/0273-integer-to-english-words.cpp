@@ -16,6 +16,7 @@ public:
         
       for (auto it: numString) {
         if (num >= it.first) {
+            
           string a = "";
           if (num >= 100) {
              a = numberToWords(num / it.first) + " ";
