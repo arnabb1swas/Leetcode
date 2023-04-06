@@ -42,27 +42,41 @@ public:
 //         return isMatchHelper(s, si, p, pi); // intializing pointer to 0 for string s & p   
 //     }
     
-    bool isMatch(string& s, string& p) {
-        if(p.size()==0) return s.size() == 0;
-        
-        int x = s.size(), y = p.size();
-        vector<vector<int>> t(x+1, vector<int>(y+1,0));
-        
-        t[0][0] = 1;
-        
-        for(int i=1; i<=p.size(); i++){
-            if(p[i-1] == '*') t[0][i] = 1;
-            else break;
+    bool solve(string &s,string &p,int i,int j,int &m,int &n,vector<vector<int>> &v){
+        if(i==m&&j==n)return true;
+        if(i == m){
+            for(int k = j; k < n; k++){
+                if(p[k] != '*')return false;
+            }
+            return true;
         }
+        if(j == n && i != m)return false;
         
-        for(int i=1; i<=s.size(); i++){
-            for(int j=1; j<=p.size(); j++){
-                if(p[j-1] == '*')  t[i][j] = t[i-1][j] || t[i][j-1];
-                else if(p[j-1] == '?' || p[j-1] == s[i-1]) {
-                    t[i][j] = t[i-1][j-1];
-                }
+        if(v[i][j] != -1)return v[i][j];
+        bool ans = false;
+        if(p[j]==s[i]){
+            if(solve(s,p,i+1,j+1,m,n,v))
+            ans = true;
+        }
+        if(p[j]== '?'){
+            if(solve(s,p,i+1,j+1,m,n,v))
+            ans= true;
+        }
+        else if(p[j] == '*'){
+            if(solve(s,p,i+1,j+1,m,n,v)){
+                ans = true;
+            }if(solve(s,p,i+1,j,m,n,v)){
+                ans = true;
+            }if(solve(s,p,i,j+1,m,n,v)){
+                ans = true;
             }
         }
-        return t[x][y];
+        v[i][j] = ans;
+        return ans;
+    }
+    bool isMatch(string s, string p) {
+        int m = s.length(), n = p.length();
+        vector<vector<int>> v(m,vector<int>(n,-1));
+        return solve(s,p,0,0,m,n,v);
     }
 };
