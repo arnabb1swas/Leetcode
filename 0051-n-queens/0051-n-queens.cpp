@@ -61,6 +61,7 @@ class Solution {
         int col = 0;
         vector<vector<string>> ans;
         solve(board, col, n, ans);
+        
         return ans;
 
     }
