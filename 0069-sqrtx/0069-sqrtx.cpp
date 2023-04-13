@@ -17,6 +17,7 @@ class Solution {
             e = mid - 1;
         } 
     }
+      
     return ans;
   }
 };
