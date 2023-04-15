@@ -6,6 +6,7 @@ public:
             s.erase(pos,part.length());
             pos=s.find(part);
         }
+        
         return s;
     }
-};
+}; 
