@@ -13,6 +13,7 @@ class Solution {
         }
         i = row;
         j = col;
+        
         //FOR UPPER LEFT
         while (i >= 0 && j >= 0){
             if (board[i][j] == 'Q') {
@@ -63,6 +64,5 @@ class Solution {
         solve(board, col, n, ans);
         
         return ans;
-
     }
 };
