@@ -43,6 +43,7 @@ class Solution {
                 solution.push_back(string(board[i].begin(), board[i].end()));
             }
             ans.push_back(solution);
+            
             return;
         }
         for (int row = 0; row < n; row++) {
