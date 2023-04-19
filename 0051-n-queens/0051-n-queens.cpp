@@ -60,7 +60,7 @@ class Solution {
     }
     
     vector<vector<string>>solveNQueens(int n) {
-        vector<vector<char>>board(n, vector<char> (n, '.'));
+        vector<vector<char>> board(n, vector<char> (n, '.'));
         int col = 0;
         
         vector<vector<string>> ans;
