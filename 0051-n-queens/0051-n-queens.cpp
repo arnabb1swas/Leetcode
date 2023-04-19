@@ -39,6 +39,7 @@ class Solution {
     void solve(vector<vector<char>>& board, int col, int n, vector<vector<string>>& ans) {
         if (col >= n) {
             vector < string > solution;
+            
             for (int i = 0; i < n; i++) {
                 solution.push_back(string(board[i].begin(), board[i].end()));
             }
@@ -61,6 +62,7 @@ class Solution {
     vector<vector<string>>solveNQueens(int n) {
         vector<vector<char>>board(n, vector<char> (n, '.'));
         int col = 0;
+        
         vector<vector<string>> ans;
         solve(board, col, n, ans);
         
