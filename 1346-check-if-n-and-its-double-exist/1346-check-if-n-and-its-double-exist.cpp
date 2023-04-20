@@ -18,6 +18,7 @@ public:
     
     bool checkIfExist(vector<int>& arr) {
         sort(arr.begin(),arr.end());
+        
         for(int i = 0;i<arr.size();i++){
             int val = binarySearch(arr, arr[i]*2); 
             if(val != -1 && val != i){
