@@ -11,6 +11,7 @@ public:
             else
                 start = mid + 1;
         }
+        
         return -1;
     }
     
@@ -22,6 +23,7 @@ public:
                 return true;
             }
         }
+        
         return false;
     }
 };
