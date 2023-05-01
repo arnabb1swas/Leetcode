@@ -10,9 +10,7 @@ public:
     };
 
     string numberToWords(int num) {
-      if (num == 0) {
-        return "Zero";
-      }
+      if (num == 0) return "Zero";
         
       for (auto it: numString) {
         if (num >= it.first) {
