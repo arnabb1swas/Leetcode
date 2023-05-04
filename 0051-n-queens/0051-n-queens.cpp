@@ -9,7 +9,7 @@ class Solution {
             if (board[i][j] == 'Q') {
                 return false;
             }
-        j--;
+            j--;
         }
         i = row;
         j = col;
@@ -47,6 +47,7 @@ class Solution {
             
             return;
         }
+        
         for (int row = 0; row < n; row++) {
             if (issafe(board, row, col, n)) {
                 // SOLVING 1 CASE
