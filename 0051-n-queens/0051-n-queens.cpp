@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     unordered_map<int,bool> rowCheck;
     unordered_map<int,bool> upperLeftDiagnolCheck;
     unordered_map<int,bool> bottomLeftDiagnolCheck;
@@ -12,8 +11,10 @@ public:
             for(int j=0; j<n ;j++) {
                 output.push_back(board[i][j]);
             }
+            
             temp.push_back(output);
         }
+        
         ans.push_back(temp);
     }
 
@@ -69,7 +70,9 @@ public:
         vector<vector<char>> board(n, vector<char>(n,'.'));
         vector<vector<string> > ans;
         int col = 0;
+        
         solve(board, col, n, ans);
+        
         return ans;
     }
 };
