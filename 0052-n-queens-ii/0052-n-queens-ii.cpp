@@ -26,7 +26,7 @@ public:
         //base case
         if(col >= n) {
             totalSol++;
-            return ;
+            return;
         }
 
         //1 case solve karna h , baaki recursion sambhal lega
@@ -53,7 +53,8 @@ public:
 
     int totalNQueens(int n) {
         vector<vector<char>> board(n, vector<char>(n,'.'));
-        int col = 0, totalSol = 0;
+        int col = 0;
+        int totalSol = 0;
         
         solve(board, col, n, totalSol);
         
